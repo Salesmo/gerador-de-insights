@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Insights</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0f172a', // Azul muito escuro (Slate 900)
+                        cardBg: '#1e293b', // Azul acinzentado (Slate 800)
+                        accent: '#10b981', // Verde Esmeralda
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body class="bg-darkBg ">
+
+    <div id="upload_screen">
+        {% include 'pages/_step1_upload.html' %}
+    </div>
+
+    <div id="insights_screen" class="hidden">
+        {% include 'pages/_step2_insights.html' %}
+    </div>
+
+    <div id="loading_screen" class="hidden">
+        {% include 'pages/_step3_loading.html' %}
+    </div>
+
+    <div id="report_screen" class="hidden">
+        {% include 'pages/_step4_report.html' %}
+    </div>
+    
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

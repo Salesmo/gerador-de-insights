@@ -1,0 +1,68 @@
+<div class="text-slate-200 min-h-screen flex items-center justify-center p-4">
+
+    <main class="w-full max-w-md bg-cardBg rounded-xl shadow-2xl overflow-hidden border border-slate-700 fade-in-up">
+        
+        <div class="p-8">
+            <header class="mb-8 text-center">
+                <h1 class="text-3xl font-bold text-white tracking-tight">
+                    Gerador de <span class="text-accent">Insights</span>
+                </h1>
+                <p class="text-sm text-slate-400 mt-2">Carregue seus dados para começar</p>
+            </header>
+
+            <form id="insightForm" class="space-y-6" onsubmit="event.preventDefault()">
+                
+                <div class="space-y-2">
+                    <label for="apiKey" class="block text-sm font-medium text-slate-300">
+                        API Key
+                    </label>
+                    <input 
+                        type="password" 
+                        id="apiKey" 
+                        placeholder="Insira sua chave aqui..." 
+                        class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-sm placeholder-slate-500 text-white"
+                    >
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-slate-300">
+                        Selecione o arquivo
+                    </label>
+                    
+                    <div class="relative">
+                        <input 
+                            type="file" 
+                            id="fileUpload" 
+                            accept=".csv" 
+                            class="hidden"
+                        >
+                        
+                        <label 
+                            for="fileUpload" 
+                            class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-slate-600 rounded-lg cursor-pointer hover:border-accent hover:bg-slate-700/50 transition-all group"
+                        >
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <svg class="w-8 h-8 mb-3 text-slate-400 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                                <p class="mb-2 text-sm text-slate-400"><span class="font-semibold text-accent">Clique para enviar</span></p>
+                                <p class="text-xs text-slate-500">Apenas arquivos .CSV</p>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div id="fileNameContainer" class="hidden mt-2 p-2 bg-slate-700/50 rounded flex items-center justify-between text-xs text-slate-300 border border-slate-600">
+                        <span id="fileNameDisplay" class="truncate max-w-[80%]">nome_do_arquivo.csv</span>
+                        <button type="button" id="removeFileBtn" class="text-red-400 hover:text-red-300 font-bold ml-2">✕</button>
+                    </div>
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="w-full bg-accent hover:bg-emerald-500 text-slate-900 font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-emerald-500/20 transform hover:-translate-y-0.5 transition-all duration-200 mt-4"
+                >
+                    Gerar Insights
+                </button>
+
+            </form>
+        </div>
+    </main>
+</div>

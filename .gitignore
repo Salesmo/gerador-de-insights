@@ -1,0 +1,15 @@
+# Ignorar pastas virtuais e de cache
+venv/
+__pycache__/
+*.pyc
+
+# Ignorar arquivos de sistema
+.DS_Store
+
+# Ignorar SEGREDOS (Muito importante!)
+.env
+
+# Ignorar uploads de testes locais
+uploads/
+codigo_gerado.txt
+flask_session/
